@@ -5,10 +5,10 @@ const nextConfig = {
 
   env: {
     API_PROD_URL: "https://api.aarkaytest.com/api/admin",
-    storageURL: "https://api.aarkaytest.com"
+    storageURL: "https://api.aarkaytest.com",
   },
 
-  async redirects() {
+  redirects: async () => {
     return [
       {
         source: "/",
@@ -23,6 +23,14 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "api.aarkaytest.com",
+      },
+      {
+        protocol: "http",
+        hostname: "127.0.0.1",
+      },
+      {
+        protocol: "http",
+        hostname: "localhost",
       },
     ],
   },
