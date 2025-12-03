@@ -2,11 +2,13 @@
 const nextConfig = {
   reactStrictMode: false,
   swcMinify: true,
+
   env: {
-    API_PROD_URL = https://api.webs.linkpc.net/api/admin
-    storageURL = https://api.webs.linkpc.net
+    API_PROD_URL: "https://api.aarkaytest.com/api/admin",
+    storageURL: "https://api.aarkaytest.com"
   },
-  redirects: async () => {
+
+  async redirects() {
     return [
       {
         source: "/",
@@ -15,23 +17,16 @@ const nextConfig = {
       },
     ];
   },
+
   images: {
     remotePatterns: [
       {
-        protocol: "http",
-        hostname: "localhost",
-      },
-      {
-        protocol: "http",
-        hostname: "127.0.0.1:8000",
-      },
-
-      {
         protocol: "https",
-        hostname: "api.your.domain.com",
+        hostname: "api.aarkaytest.com",
       },
     ],
   },
+
   devIndicators: {
     buildActivity: false,
   },
