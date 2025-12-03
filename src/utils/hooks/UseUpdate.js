@@ -1,0 +1,28 @@
+import { useMutation } from "@tanstack/react-query";
+import { usePathname, useRouter } from "next/navigation";
+import request from "../axiosUtils";
+import SuccessHandle from "../customFunctions/SuccessHandle";
+
+const UseUpdate = (url, updateId, path, message, extraFunction) => {
+  const router = useRouter();
+  const pathname = usePathname();
+  return useMutation(
+    {mutationFn: (data) =>
+      request(
+        {
+          url: `${url}/${
+            Array.isArray(updateId) ? updateId.join("/") : updateId
+          }`,
+          method: "put",
+          data,
+        },
+        router
+      ),
+      onSuccess: (resData) => {
+        SuccessHandle(resData, router, path, message, pathname);
+        extraFunction && extraFunction(resData);
+      },
+    }
+  );
+};
+export default UseUpdate;

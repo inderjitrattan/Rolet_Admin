@@ -1,0 +1,23 @@
+import CheckBoxField from "@/components/inputFields/CheckBoxField";
+import MultiSelectField from "@/components/inputFields/MultiSelectField";
+import { useTranslation } from "react-i18next";
+
+const CategoryTab = ({ categoryData, setSearch, values, setFieldValue }) => {
+  const { t } = useTranslation("common");
+  return (
+    <>
+      <MultiSelectField
+        values={values}
+        setFieldValue={setFieldValue}
+        name={"categoryIconListCategories"}
+        title="categories"
+        data={categoryData}
+      />
+      <CheckBoxField
+        name={`[content][categories_icon_list][status]`}
+        title="status"
+      />
+    </>
+  );
+};
+export default CategoryTab;

@@ -1,0 +1,33 @@
+import CheckBoxField from "@/components/inputFields/CheckBoxField";
+import MultiSelectField from "@/components/inputFields/MultiSelectField";
+import SimpleInputField from "@/components/inputFields/SimpleInputField";
+import { useTranslation } from "react-i18next";
+
+const CategoryProductTab = ({ categoryData, values, setFieldValue }) => {
+  const { t } = useTranslation("common");
+  return (
+    <>
+      <SimpleInputField
+        nameList={[
+          {
+            name: `[content][category_product][title]`,
+            placeholder: t("enter_title"),
+            title: "title",
+          },
+        ]}
+      />
+      <MultiSelectField
+        values={values}
+        setFieldValue={setFieldValue}
+        name={"productCategory"}
+        title="categories"
+        data={categoryData}
+      />
+      <CheckBoxField
+        name={`[content][category_product][status]`}
+        title="status"
+      />
+    </>
+  );
+};
+export default CategoryProductTab;
