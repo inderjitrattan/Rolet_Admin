@@ -30,9 +30,6 @@ const ContactPageTab = ({ values, setFieldValue }) => {
       <ContactWrapper
         contactDetails={{ value: "detail_3", title: "detail_3" }}
       />
-      <ContactWrapper
-        contactDetails={{ value: "detail_4", title: "detail_4" }}
-      />
     </>
   );
 };

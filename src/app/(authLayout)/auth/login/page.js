@@ -53,7 +53,7 @@ const Login = () => {
             }
             alt="Light Logo"
             width={140}
-            height={28}
+            height={70}
             priority
           />
           <h4>{t("log_in_your_account")}</h4>
